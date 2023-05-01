@@ -1,0 +1,170 @@
+Q1.interface Age {
+int x = 21;
+void getAge();
+}
+class AnonymousDemo
+{
+public static void main(String[] args)
+{
+Age oj1 = new Age()
+{
+public void getAge()
+{
+System.out.print("Age is " + x);
+}
+};
+oj1.getAge();
+}
+}
+
+
+Q2.abstract class Marks {
+int marks = 91;
+abstract void printMarks();
+}
+class AnonymousDemo
+{
+public static void main(String[] args)
+{
+Marks oj1 = new Marks()
+{
+public void printMarks()
+{
+System.out.print("Marks is " + marks);
+}
+};
+oj1.printMarks();
+}
+}
+
+
+Q3.import java.io.*;
+
+interface Add_Sub {
+    void add(double x, double y);
+    void sub(double x, double y);
+}
+
+interface Mul_Div {
+    void multiply(double x, double y);
+    void divide(double x, double y);
+}
+
+interface Calculate extends Add_Sub, Mul_Div {
+    void printResult(double result);
+}
+
+class MyCalculator implements Calculate {
+    public void add(double x, double y) {
+        double res = x + y;
+        printResult(res);
+    }
+
+    public void sub(double x, double y) {
+        double res = x - y;
+        printResult(res);
+    }
+
+    public void multiply(double x, double y) {
+        double res = x * y;
+        printResult(res);
+    }
+
+    public void divide(double x, double y) {
+        double res = x / y;
+        printResult(res);
+    }
+
+    public void printResult(double result) {
+        System.out.println(result);
+    }
+}
+
+class MainInterface {
+    public static void main(String args[]) {
+        MyCalculator c1 = new MyCalculator();
+
+        c1.add(10, 20);
+        c1.sub(20, 10);
+        c1.multiply(10, 20);
+        c1.divide(20, 10);
+    }
+}
+
+
+
+Q4.interface details
+{
+void display();
+}
+class student
+{
+String name;
+int roll_number;
+double marks1;
+double marks2;
+
+student(String n , int r, double m1, double m2)
+{
+name = n;
+roll_number = r;
+marks1 = m1;
+marks2 = m2;
+}
+void print()
+{
+System.out.println("Name: " +name);
+System.out.println("Roll_number: " +roll_number);
+System.out.println("Marks1: " +marks1);
+System.out.println("Marks2: " +marks2);
+}
+}
+
+class Results extends student implements details
+{
+
+Results (String n , int r, double m1, double m2)
+{
+super(n, r, m1, m2);
+}
+public void display()
+{
+print();
+double average =(marks1+marks2)/2;
+System.out.println("Average: " +average);
+}
+}
+
+class MultipleInheritance
+{
+public static void main(String[]args)
+{
+Results r =new Results("Sky",26,89.25,91.25);
+r.display();
+
+}
+}
+
+Q5.
+class triangle
+{
+void display()
+{
+System.out.println("Inside the class triangle");
+}
+}
+class AnonymousInnerClass
+{
+public static void main(String[] args)
+{
+triangle objt= new triangle()
+{
+void display()
+{
+System.out.println("Inside the Anonymous class triangle");
+}
+};
+objt.display();
+}
+}
+
